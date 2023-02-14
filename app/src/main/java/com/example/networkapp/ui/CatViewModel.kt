@@ -8,13 +8,13 @@ import com.example.networkapp.data.CatResponse
 import com.example.networkapp.data.RepositoryImpl
 import kotlinx.coroutines.launch
 
-class CatViewModel: ViewModel() {
-    private val _catLiveData = MutableLiveData<String?>()
-    val catLiveData: LiveData<String?> get() = _catLiveData
+class CatViewModel : ViewModel() {
+    private val _catLiveData = MutableLiveData<List<CatResponse>>()
+    val catLiveData: LiveData<List<CatResponse>> get() = _catLiveData
 
-    fun getCatImage() {
+    fun getCatImage(breed: String) {
         viewModelScope.launch {
-            _catLiveData.value = RepositoryImpl().getImage().get(0).imageUrl
+            _catLiveData.value = RepositoryImpl().getImage(breed)
         }
     }
 }
