@@ -1,12 +1,11 @@
-package com.example.networkapp
+package com.example.networkapp.ui
 
 import android.os.Bundle
-import android.view.View
 import android.widget.*
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
-import com.example.networkapp.ui.CatViewModel
+import com.example.networkapp.R
 
 class MainActivity : AppCompatActivity() {
 

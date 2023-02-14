@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.networkapp.data.CatResponse
+import com.example.networkapp.data.models.CatResponse
 import com.example.networkapp.data.RepositoryImpl
 import kotlinx.coroutines.launch
 

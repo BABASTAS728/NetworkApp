@@ -1,5 +1,6 @@
 package com.example.networkapp.data
 
+import com.example.networkapp.data.models.CatResponse
 import com.example.networkapp.domain.Repository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
