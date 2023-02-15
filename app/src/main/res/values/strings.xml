@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">NetworkApp</string>
+    <string-array name="breeds">
+        <item>Abyssinian</item>
+        <item>Bengal</item>
+        <item>Birman</item>
+        <item>Bombay</item>
+    </string-array>
+    <string-array name="server_breeds">
+        <item>abys</item>
+        <item>beng</item>
+        <item>birm</item>
+        <item>bomb</item>
+    </string-array>
 </resources>

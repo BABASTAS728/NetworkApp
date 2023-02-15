@@ -1,8 +1,7 @@
 package com.example.networkapp.domain
 
-import com.example.networkapp.data.CatResponse
-import retrofit2.Call
+import com.example.networkapp.data.models.CatResponse
 
 interface Repository {
-    suspend fun getImage(): List<CatResponse>
+    suspend fun getImage(breed: String): List<CatResponse>
 }
