@@ -28,13 +28,14 @@ class MainActivity : AppCompatActivity() {
             val imageView = findViewById<ImageView>(R.id.imageView)
             val button = findViewById<Button>(R.id.button)
             button.setOnClickListener {
-                catViewModel.catLiveData.observe(this) {
-                    Glide
-                        .with(this)
-                        .load(it[0].imageUrl)
-                        .into(imageView)
-                }
                 catViewModel.getCatImage(serverBreeds[spinner.selectedItemPosition])
+            }
+
+            catViewModel.catLiveData.observe(this) {
+                Glide
+                    .with(this)
+                    .load(it[0].imageUrl)
+                    .into(imageView)
             }
         }
     }
