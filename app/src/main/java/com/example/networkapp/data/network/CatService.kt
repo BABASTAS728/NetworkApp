@@ -1,4 +1,4 @@
-package com.example.networkapp.data
+package com.example.networkapp.data.network
 
 import com.example.networkapp.data.models.CatResponse
 import retrofit2.Call
