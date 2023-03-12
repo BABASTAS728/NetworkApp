@@ -1,15 +1,14 @@
-package com.example.networkapp.data.di
+package com.example.networkapp.data.di.modules
 
 import com.example.networkapp.data.RepositoryImpl
 import com.example.networkapp.domain.Repository
 import dagger.Binds
 import dagger.Module
-import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
 
 @Module
-@InstallIn(SingletonComponent::class)
 abstract class RepositoryModule {
     @Binds
+    @Singleton
     abstract fun getRepository(impl: RepositoryImpl): Repository
 }

@@ -5,15 +5,19 @@ import android.widget.*
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.example.networkapp.CatsApp
 import com.example.networkapp.R
-import dagger.hilt.android.AndroidEntryPoint
+import com.example.networkapp.data.di.ViewModelFactory
+import javax.inject.Inject
 
-@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    private val catViewModel by viewModels<CatViewModel>()
+    @Inject
+    lateinit var factory: ViewModelFactory
+    private val catViewModel: CatViewModel by viewModels { factory }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        (applicationContext as CatsApp).appComponent.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
