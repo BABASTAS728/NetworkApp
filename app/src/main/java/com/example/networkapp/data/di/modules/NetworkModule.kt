@@ -1,20 +1,19 @@
-package com.example.networkapp.data.di
+package com.example.networkapp.data.di.modules
 
 import com.example.networkapp.data.network.CatService
 import dagger.Module
 import dagger.Provides
-import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Singleton
 
 @Module
-@InstallIn(SingletonComponent::class)
 class NetworkModule {
 
     @Provides
+    @Singleton
     fun getRetrofit(client: OkHttpClient): Retrofit = Retrofit.Builder()
         .baseUrl("https://api.thecatapi.com/v1/")
         .addConverterFactory(GsonConverterFactory.create())
@@ -22,9 +21,11 @@ class NetworkModule {
         .build()
 
     @Provides
+    @Singleton
     fun getService(retrofit: Retrofit): CatService = retrofit.create(CatService::class.java)
 
     @Provides
+    @Singleton
     fun getClient(): OkHttpClient {
         val interceptor = HttpLoggingInterceptor()
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
